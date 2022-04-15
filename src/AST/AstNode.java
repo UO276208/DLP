@@ -1,6 +1,9 @@
 package AST;
 
+import visitor.Visitor;
+
 public interface AstNode {
-    int getRow();
+    int getLine();
     int getColumn();
+    <TP,TR> TR accept(Visitor<TP,TR> visitor, TP parameters);
 }
